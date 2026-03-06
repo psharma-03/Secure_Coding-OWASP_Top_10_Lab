@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  juiceshop:
+    image: bkimminich/juice-shop:latest
+    container_name: owasp_juiceshop
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: dvwa_lab
+    ports:
+      - "8081:80"
+    restart: unless-stopped
